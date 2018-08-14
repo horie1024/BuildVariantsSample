@@ -6,7 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.horie1024.buildvariantssample"
         minSdkVersion 21
@@ -22,18 +22,21 @@ android {
         }
     }
 
-    flavorDimensions "tier"
+    flavorDimensions "mode", "app"
 
     productFlavors {
-        normal {
-            dimension "tier"
+        demo {
+            dimension "mode"
+        }
+        full {
+            dimension "mode"
         }
         app1 {
-            dimension "tier"
+            dimension "app"
             applicationId "com.horie1024.app1"
         }
         app2 {
-            dimension "tier"
+            dimension "app"
             applicationId "com.horie1024.app2"
         }
     }
